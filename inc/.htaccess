@@ -1,0 +1,3 @@
+<Files imghostdb>
+deny from all
+</Files>

@@ -1,0 +1,79 @@
+body {
+	font: 12pt 'Trebuchet MS';
+	color: #333;
+	margin: 0px;
+	padding: 0px;
+}
+
+#container {
+	width: 640px;
+	padding: 4px;
+	margin: auto;
+}
+
+#vorschau {
+	padding: 3px;
+	border: 1px solid black;
+}
+
+a, a:visited {
+	text-decoration: none;
+	color: #333;
+}
+
+a:hover {
+	text-decoration: underline;
+}
+
+strong {
+	color: #8ABD80;	
+}
+
+small {
+	color: gray;
+	font-size: 8pt;
+}
+
+h1 {
+	width: 60%;
+	border-bottom: 1px solid lightgray;
+}
+
+h1 a:link, h1 a:visited {
+	color: #8ABD80;
+	letter-spacing: -1px;
+	text-decoration: none;
+}
+
+h3 {
+	border-bottom: 1px solid #CCE9BD;
+}
+
+ul {
+	list-style-image: url(img/arrow.jpg);
+}
+
+input {
+	padding: 1px;
+}
+
+.tool-tip {
+	color: #fff;
+	width: 139px;
+	z-index: 13000;
+}
+ 
+.tool-title {
+	font-weight: bold;
+	font-size: 11px;
+	margin: 0;
+	color: #8ABD80;
+	padding: 8px 8px 4px;
+	background: url(img/bubble.png) top left;
+}
+ 
+.tool-text {
+	font-size: 11px;
+	padding: 4px 8px 8px;
+	background: url(img/bubble.png) bottom right;
+}

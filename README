@@ -1,0 +1,37 @@
+### 	IMGhost w/ SQLite Support
+### 	Erstellt von Sascha Ohms
+
+--- INFO
+Dies ist ein kostenloses Image-Hosting Script. Es unterstützt die typischsten Bildformate
+jpg, png und gif. Bilder werden hochgeladen, automatisch als Thumbnail gespeichert
+und in diversen Formen für HTML, Forum und als Direktlink ausgegeben. Wahlweise auch 
+als Version, um Aufrufe zu zählen, oder auf Twitter zu posten.
+
+Alle Informationen wie Löschcodes, Grafiken und Clicks werden via SQLite in einer Datei 
+auf dem Server gespeichert.
+
+
+--- INSTALLATION
+Die Installation verläuft sehr einfach. Man muss bloß alle Dateien und Ordner hochladen
+und die Rechte von den Ordnern i, t und clicks auf 777 setzen. 
+
+Als Datenbank wird SQLite benutzt. Dies ist fest ab PHP5 integriert. Bitte hierfür die
+inc/config.inc.php öffnen. Weitere Informationen sind dort zu finden.
+
+
+--- LIZENZ
+Dieses Werk von Sascha Ohms steht unter folgender Creative Commons Lizenz
+
+BY-NC-SA
+
+http://creativecommons.org/licenses/by-nc-sa/3.0/de/
+
+
+Kurzform:
+Das Copyright im Quelltext des Footers muss bestehen bleiben. Es ist als Kommentar 
+dargestellt. Das Sehbare Copyright kann und darf in der indx.php geändert werden.
+
+Das Script darf nicht kommerziell genutzt werden. Darf also nicht verkauft werden. 
+
+Bedeutet, dass dieses Script ausschließlich unter gleichen Bedingungen weitergegeben
+werden darf!

@@ -1,0 +1,12 @@
+﻿10.08.2009 Sascha Ohms
+	* 1st Release von imghost-sqlite
+	* Hochgeladene Bilder werden in SQLite DB eingetragen
+	* Clickcounter auf SQLite umgestellt
+	* Clickcounter-Seite ausgebessert
+	* index Files von .php in .html umbenannt
+	* Bilder koennen nun geloescht werden, wenn man den DeleteCode dazu besitzt
+	* Random-Name Funktion eingebaut, welche gleichzeitig Deletelink generiert
+	* Bildcounter berichtigt
+	* Output Seite mit mehr Informationen bestueckt
+	* README angepasst
+	
