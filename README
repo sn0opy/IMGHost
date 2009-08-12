@@ -15,9 +15,10 @@ auf dem Server gespeichert.
 Die Installation verläuft sehr einfach. Man muss bloß alle Dateien und Ordner hochladen
 und die Rechte von den Ordnern i, t und clicks auf 777 setzen. 
 
-Als Datenbank wird SQLite benutzt. Dies ist fest ab PHP5 integriert. Bitte hierfür die
-inc/config.inc.php öffnen. Weitere Informationen sind dort zu finden.
-
+Beim ersten Aufruf des Scriptes, wird eine SQLite-Datenbank generiert. Diese besteht aus
+20 Zufallszeichen. Zusätzlich wird die Config erstellt und dieser name dort eingetragen.
+Der Name kann beliebig geändert werden, dabei dann aber nicht vergessen, auch die 
+config.inc.php zu ändern.
 
 --- LIZENZ
 Dieses Werk von Sascha Ohms steht unter folgender Creative Commons Lizenz
