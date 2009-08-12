@@ -34,7 +34,7 @@ if(!file_exists('inc/config.inc.php')) {
         // config.inc.php erstellen        
         $configcontent = '
 <?
-define("DBFILE", "'.$dbname.'");
+define("DBFILE", "inc/'.$dbname.'");
 ?>';
         
         $fh = fopen('inc/config.inc.php', 'w');
@@ -52,7 +52,7 @@ define("DBFILE", "'.$dbname.'");
     include 'inc/config.inc.php';  // Name der SQLite DB wird hier festgelegt
 	include 'inc/sqlite.class.php';
 	
-    if(file_exists('inc/'.DBFILE)) {
+    if(file_exists(DBFILE)) {
         $db = new db; // Datenkbank oeffnen
     } else {
         die('<p><img src="inc/img/zeichen.png" alt=""/> Datenbank existiert nicht. Bitte Config l&ouml;schen und Seite neu laden</p>');
