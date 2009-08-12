@@ -1,9 +1,5 @@
 <?
 
-include 'inc/config.inc.php';  // Name der SQLite DB wird hier festgelegt
-include 'inc/sqlite.class.php';
-$db = new db; // Datenkbank oeffnen
-
 $globvar = array();
 $globvar['title'] = 'IMGhost'; 
 $globvar['2ndtitle'] = 'Host your images';
@@ -20,6 +16,43 @@ $globvar['validimages'] = array(".jpg", ".gif", ".png", ".JPG", ".GIF", ".PNG");
 
 ob_start();
 include('tpl/header.tpl.php');
+
+if(!file_exists('inc/config.inc.php')) {
+	$dbname = rand_str(20);
+
+	if ($db = sqlite_open('inc/'.$dbname, 0666)) { 
+		// SQLite DB erstellen
+		$sql = "
+		CREATE TABLE 'img_images' (
+		   imageName varchar(30) not null,
+		   numClicks integer(11) not null,
+		   insertDate integer(11) not null,
+		   deleteString varchar(6) not null
+		)";
+		sqlite_query($db, $sql);
+		
+		// config.inc.php erstellen		
+		$configcontent = "
+<?
+define('DBFILE', '$dbname');
+?>";
+		
+		$fh = fopen('inc/config.inc.php', 'w');
+		fputs($fh, $configcontent);
+		fclose($fh);		
+		
+		echo '<p><img src="inc/img/success.png" alt="" /> Datenbank wurde erstellt.</p>';
+	} else {
+		echo '<p><img src="inc/img/zeichen.png" alt="" /> Kann Datenbank nicht erstellen. Schreibrechte?</p>';
+	}
+	
+	die();
+	
+} else if(file_exists('inc/config.inc.php')) {
+	include 'inc/config.inc.php';  // Name der SQLite DB wird hier festgelegt
+	include 'inc/sqlite.class.php';
+	$db = new db; // Datenkbank oeffnen
+} 
 
 if(isset($_GET['d'])) {
 	if(isset($_GET['c'])) {
@@ -38,6 +71,7 @@ if(isset($_GET['d'])) {
 				$db->query("DELETE FROM img_images WHERE imageName = '" .$imageName. "' AND deleteString = '" .$deleteString. "'");
 				unlink("./i/" .$imageName); // Bild loeschen
 				unlink("./i/t/" .$imageName); // Thumbnail loeschen
+				echo '<p><img src="inc/img/success.png" alt=""/> Grafik erfolgreich gel&ouml;scht.</p>';
 			} else {
 				echo '<p><img src="inc/img/zeichen.png" alt=""/> Code und Bildname passen nicht zusammen</p>';
 			}

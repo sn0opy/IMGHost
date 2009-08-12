@@ -1,4 +1,7 @@
-﻿10.08.2009 Sascha Ohms
+﻿12.08.2009 Sascha Ohms
+	* Datenbank wird nun aus Zufallszeichen beim ersten Aufruf generiert
+
+10.08.2009 Sascha Ohms
 	* 1st Release von imghost-sqlite
 	* Hochgeladene Bilder werden in SQLite DB eingetragen
 	* Clickcounter auf SQLite umgestellt
