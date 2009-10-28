@@ -10,6 +10,15 @@ als Version, um Aufrufe zu zählen, oder auf Twitter zu posten.
 Alle Informationen wie Löschcodes, Grafiken und Clicks werden via SQLite in einer Datei 
 auf dem Server gespeichert.
 
+Es gibt 3 verschiedene Thumb-Erstellungs-Modi. 
+ 
+Modus 1) Bilder haben eine feste Breite + Höhe. Es wird ausschließlich unterschieden, ob 
+         das Bild im 16/9 oder 4/3 Format ist.
+ 
+Modus 2) Höhe und Breite werden anhand eines Prozentwertes verkleinert.
+ 
+Modus 3) Es gibt eine feste Breite (in Pixel). Der Höhenwert wird anhand eines aus-
+         gerechnetem Prozentwertes extra berechnet.
 
 --- INSTALLATION
 Die Installation verläuft sehr einfach. Man muss bloß alle Dateien und Ordner hochladen

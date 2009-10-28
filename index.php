@@ -4,6 +4,9 @@ $globvar = array();
 $globvar['title'] = 'IMGhost'; 
 $globvar['2ndtitle'] = 'Host your images';
 $globvar['maxsize'] = '1536'; // Angabe in Kilobyte
+$globvar['resizemode'] = 2; // 1 = feste Thumbbreite + Hoehe; 2 = Prozentual; 3 = Feste Breite + dynamische Hoehe
+$globvar['thumb_percent'] = 40;		// Prozentwert welcher Bilder um X% verkleinert
+$globvar['thumb_fixed'] = 150;		// Wert der festen Breite im resizemode 3
 $globvar['thumbwidth43'] = 180;      // neu resize 
 $globvar['thumbheight43'] = 135;     // für 16/9/
 $globvar['thumbwidth169'] = 240;     // und 4/3
@@ -13,8 +16,6 @@ $globvar['use_randomname'] = true; // Zufallsname oder alten Dateinamen überneh
 $globvar['twitter'] = true; // schaltet die Ausgabe des Twitterlinks an / aus
 $globvar['showformafterup'] = true; // Option um das Uploadformular nach dem Upload auszublenden
 $globvar['validimages'] = array(".jpg", ".gif", ".png", ".JPG", ".GIF", ".PNG"); // Valide bildformate hier eintragen
-$globvar['needpassword'] = false; // Zum Hochladen wird ein Passwort benoetigt
-$globvar['password'] = "";
 
 ob_start();
 include('tpl/header.tpl.php');
@@ -110,25 +111,15 @@ if(isset($_GET['d'])) {
         }
     }        
 } else {
-	if(isset($_POST['nsubmit'])) { 
-		if($globvar['showformafterup']) {
-			include('tpl/index.tpl.php');
-		}
-					
-		if($globvar['needpassword'])  {
-			if($_POST['password'] != $globvar['password']) {
-				echo '<p><img src="./inc/img/zeichen.png" alt="" \> Falsches Passwort</p>';
-				exit;
-			}
-		}				
-			
-		$submitted = true;			
-	} 
-
-	if(!isset($submitted)){
-		include('tpl/index.tpl.php');
-		$submitted = false;	
-	}	       
+    if(isset($_POST['nsubmit'])) { 
+        if($globvar['showformafterup']) 
+            include('tpl/index.tpl.php');
+        
+        $submitted = true;
+    } else {
+        include('tpl/index.tpl.php');
+        $submitted = false;    
+    }        
 
     if($submitted) {
         $tempname = $_FILES['nfile']['tmp_name']; 
@@ -195,6 +186,20 @@ if(isset($_GET['d'])) {
                 $thumb_width = $width;
                 $thumb_height = $height;
             }
+			
+			// Thumbnails anhand eines Prozentwertes erstellen
+			if($globvar['resizemode'] == 2) {
+				$thumb_width = $width * $globvar['thumb_percent'] / 100;
+				$thumb_height = $height * $globvar['thumb_percent'] / 100;
+			}
+			
+			// Thumbnails haben feste Breite. Hoehe wird prozentual berechnet
+			if($globvar['resizemode'] == 3) {
+				$thumb_width = $globvar['thumb_fixed'];				
+				$percent_width = $globvar['thumb_fixed'] * 100 / $width;
+				
+				$thumb_height = $height * $percent_width / 100;
+			}
             
             // Thumbnil generieren
             $thumb = imagecreatetruecolor($thumb_width, $thumb_height);

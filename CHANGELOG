@@ -1,4 +1,10 @@
-﻿12.08.2009 Sascha Ohms
+﻿28.10.2009 Sascha Ohms
+	* 2 weitere Thumb-Modi hinzugefügt (Höhe+Breite nach Prozent; Fixed width mit dynamischer Höhe)
+
+26.10.2009 Sascha Ohms
+	* Option hinzugefÃ¼gt ein Passwort beim Upload zu erzwingen
+
+12.08.2009 Sascha Ohms
 	* README abgeaendert
 	* Datenbank wird nun aus Zufallszeichen beim ersten Aufruf generiert
 
