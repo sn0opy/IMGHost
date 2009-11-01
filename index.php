@@ -126,7 +126,7 @@ if(isset($_GET['d'])) {
         $type = $_FILES['nfile']['type'];        
         $thename = $_FILES['nfile']['name'];
         
-        $endung = substr($thename, -4);
+        $endung = strtolower(substr($thename, -4));
         
         // Abfrage, ob Bildnamen nach dem Zufall gewaehlt werden sollen. Wenn nicht wird der eigentlich Bildname verwendet
         if($globvar['use_randomname'] == true)
