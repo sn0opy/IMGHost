@@ -1,4 +1,7 @@
-﻿28.10.2009 Sascha Ohms
+﻿01.11.2009 Sascha Ohms
+        * Dateiendung wird in Kleinbuchstaben konvertiert (Danke an Mathias Fiege fuer die Info - nogad.de)
+
+28.10.2009 Sascha Ohms
 	* 2 weitere Thumb-Modi hinzugefügt (Höhe+Breite nach Prozent; Fixed width mit dynamischer Höhe)
 
 26.10.2009 Sascha Ohms
