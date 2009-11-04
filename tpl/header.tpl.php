@@ -8,4 +8,19 @@
 </head>
 <body>
 <div id="container">
-<div id="slideheader"><h1><a href="./"><?=$globvar['title']?></a> <small><?=$globvar['2ndtitle']?></small></h1></div>
+	<div><h1><a href="./"><?=$globvar['title']?></a> <small><?=$globvar['2ndtitle']?></small></h1></div>
+	<div id="navi">
+		<ul>
+			<li><span><a href="./">Start</a></span></li>
+			<?php if($globvar['allowreg'] == true && islogged() == false) { ?>
+			<li><span><a href="./?reg">Reg</a></span></li>
+			<?php } ?>
+			<?php if($globvar['allowlogin'] == true && islogged() == false) { ?>
+			<li><span><a href="./?login">Login</a></span></li>
+			<?php } ?>
+			<?php if(islogged()) { ?>
+			<li><span><a href="./?logout">Logout</a></span></li>
+			<li><span><a href="./?profile"><?php echo $_COOKIE['img_username']; ?></a></span></li>
+			<?php } ?>
+		</ul>
+	</div>

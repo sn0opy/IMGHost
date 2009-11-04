@@ -1,11 +1,17 @@
-﻿01.11.2009 Sascha Ohms
-        * Dateiendung wird in Kleinbuchstaben konvertiert (Danke an Mathias Fiege fuer die Info - nogad.de)
+04.11.2009 Sascha Ohms
+	* Usersystem (Reg, Login, Logout, Profil)
+	* Bilder werden Usern (sofern eingeloggt) zugeordnet
+	* dutzende Styleimprovements
+	* zeichen.png => error.png
+	
+01.11.2009 Sascha Ohms
+    * Dateiendung wird in Kleinbuchstaben konvertiert (Danke an Mathias Fiege fuer die Info - nogad.de)
 
 28.10.2009 Sascha Ohms
-	* 2 weitere Thumb-Modi hinzugefügt (Höhe+Breite nach Prozent; Fixed width mit dynamischer Höhe)
+	* 2 weitere Thumb-Modi hinzugef�gt (H�he+Breite nach Prozent; Fixed width mit dynamischer H�he)
 
 26.10.2009 Sascha Ohms
-	* Option hinzugefÃ¼gt ein Passwort beim Upload zu erzwingen
+	* Option hinzugefügt ein Passwort beim Upload zu erzwingen
 
 12.08.2009 Sascha Ohms
 	* README abgeaendert

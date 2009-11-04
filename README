@@ -1,6 +1,8 @@
 ### 	IMGhost w/ SQLite Support
 ### 	Erstellt von Sascha Ohms
 
+
+
 --- INFO
 Dies ist ein kostenloses Image-Hosting Script. Es unterstützt die typischsten Bildformate
 jpg, png und gif. Bilder werden hochgeladen, automatisch als Thumbnail gespeichert
@@ -20,14 +22,19 @@ Modus 2) Höhe und Breite werden anhand eines Prozentwertes verkleinert.
 Modus 3) Es gibt eine feste Breite (in Pixel). Der Höhenwert wird anhand eines aus-
          gerechnetem Prozentwertes extra berechnet.
 
+Das Script hat ein Usersystem integriert, welches sich komplett ausschalten lässt. Ist es 
+eingeschaltet, wo kann der User seine eigenen Bilder in seinem Profil begutachten und löschen.	
+
+	
 --- INSTALLATION
 Die Installation verläuft sehr einfach. Man muss bloß alle Dateien und Ordner hochladen
 und die Rechte von den Ordnern i, t und clicks auf 777 setzen. 
 
 Beim ersten Aufruf des Scriptes, wird eine SQLite-Datenbank generiert. Diese besteht aus
-20 Zufallszeichen. Zusätzlich wird die Config erstellt und dieser name dort eingetragen.
-Der Name kann beliebig geändert werden, dabei dann aber nicht vergessen, auch die 
-config.inc.php zu ändern.
+20 Zufallszeichen. Zusätzlich wird die Config erstellt.
+Der Name kann beliebig geändert werden, es darf nur nicht vergessen werden, den Namen der
+Datenbank auch in die config.inc.php einzutragen.
+
 
 --- LIZENZ
 Dieses Werk von Sascha Ohms steht unter folgender Creative Commons Lizenz
