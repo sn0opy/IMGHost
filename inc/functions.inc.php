@@ -1,6 +1,6 @@
 <?php
 
-// Funktion zum überprüfen, ob die Datei auch valide ist
+// Funktion zum ueberpruefen, ob die Datei auch valide ist
 function is_valid_filename($filename, $extensions) {
     $regex = '/^\w\.(' .implode('|', $extensions). ')$/';
     return preg_match($regex, $filename);
@@ -23,7 +23,7 @@ function success($msg, $redirect = 0, $page = './', $time = 3000) {
 	print '<div class="success">' .$msg. '</div>';
 }
 
-// getServer - Gibt den aktuellen Servernamen zurück
+// getServer - Gibt den aktuellen Servernamen zurueck
 function getServer() {
     if(dirname($_SERVER['REQUEST_URI']) == "/")
         return $_SERVER['HTTP_HOST'].dirname($_SERVER['REQUEST_URI']);
@@ -62,7 +62,7 @@ function rand_str($length = 6, $chars = 'ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklm
     return $string;
 }
 
-// Passwortverschlüsselung
+// Passwortverschluesselung
 function encryptpass($password) {
 	if(!empty($password)) {
 		$key = substr(DBFILE, -20).'HB7nxFsrqfJVGqQIo4pkv4KHmDwIRdhqv8Izc2B7dYerMS7LnTYTWbLgtIwao0WEzqYje2';	
@@ -93,7 +93,7 @@ Das Passwort wird logischerweise verschlüsselt in der Datenbank abgelegt.";
 	mail($email, "Willkommen bei ".$title, $text, $headers);
 }
 
-// Prüft ob benutzer bereits eingeloggt ist
+// Prueft ob benutzer bereits eingeloggt ist
 function isLogged() {
 	if(isset($_COOKIE['img_username']) && isset($_COOKIE['img_password']) && isset($_COOKIE['img_userid'])) {
 		$db = new db;		
