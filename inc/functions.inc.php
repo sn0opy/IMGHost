@@ -95,13 +95,14 @@ Das Passwort wird logischerweise verschlüsselt in der Datenbank abgelegt.";
 
 // Prüft ob benutzer bereits eingeloggt ist
 function isLogged() {
-	if(isset($_COOKIE['img_username']) && isset($_COOKIE['img_password'])) {
+	if(isset($_COOKIE['img_username']) && isset($_COOKIE['img_password']) && isset($_COOKIE['img_userid'])) {
 		$db = new db;		
 	
 		$username = sqlite_escape_string($_COOKIE['img_username']);
 		$pass = sqlite_escape_string($_COOKIE['img_password']);
+		$userID = (int) $_COOKIE['img_password'];
 
-		$db->query("SELECT * FROM 'img_users' WHERE userName = '" .$username. "' AND userPass = '" .$pass. "'");
+		$db->query("SELECT * FROM 'img_users' WHERE userName = '" .$username. "' AND userPass = '" .$pass. "' AND userID = " .$userID);
 		
 		if($db->numRows())
 			return true;
