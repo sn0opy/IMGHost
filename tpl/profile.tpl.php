@@ -11,7 +11,7 @@
 	</div>
 	<div class="outLinks">
 		<div class="formRow">
-			<div class="formValue"><p>Klicks: <?php echo $row[1]; ?> - Hochgeladen: <?php echo $row[2]; ?> Uhr <a href="./?d=<?php echo $row[0]; ?>&amp;c=<?php echo $row[3]; ?>" /><img src="inc/img/delete.png" alt="Löschen" /></a></p></div>
+			<div class="formValue"><p>Klicks: <?php echo $row[1]; ?> - Hochgeladen: <?php echo $row[2]; ?> Uhr <a href="./?d=<?php echo $row[0]; ?>&amp;c=<?php echo $row[3]; ?>" /><img src="inc/img/delete.png" alt="L&ouml;schen" /></a></p></div>
 		</div>
 		<div class="formRow">
 			<div class="formLabel"><span>Direktlink</span></div>

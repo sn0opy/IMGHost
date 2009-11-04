@@ -8,18 +8,18 @@ $globvar['resizemode'] = 3; // 1 = feste Thumbbreite + Hoehe; 2 = Prozentual; 3 
 $globvar['thumb_percent'] = 40;		// Prozentwert welcher Bilder um X% verkleinert
 $globvar['thumb_fixed'] = 150;		// Wert der festen Breite im resizemode 3
 $globvar['thumbwidth43'] = 180;      // neu resize 
-$globvar['thumbheight43'] = 135;     // für 16/9/
+$globvar['thumbheight43'] = 135;     // fuer 16/9/
 $globvar['thumbwidth169'] = 240;     // und 4/3
 $globvar['thumbheight169'] = 135; 
 $globvar['visiblecopyright'] = ' &copy;2009 <a href="http://www.somegas.de">Sascha Ohms</a>'; // Darf frei editiert werden
-$globvar['use_randomname'] = true; // Zufallsname oder alten Dateinamen übernehmen
+$globvar['use_randomname'] = true; // Zufallsname oder alten Dateinamen uebernehmen
 $globvar['twitter'] = true; // schaltet die Ausgabe des Twitterlinks an / aus
 $globvar['showformafterup'] = true; // Option um das Uploadformular nach dem Upload auszublenden
 $globvar['validimages'] = array(".jpg", ".gif", ".png"); // Valide bildformate hier eintragen
 $globvar['needpassword'] = false; // Zum Hochladen wird ein Passwort benoetigt
 $globvar['password'] = "";
-$globvar['allowreg'] = true; // Dürfen user sich registrieren?
-$globvar['allowlogin'] = true; // Dürfen bereits registrierte Benutzer sich anmelden?
+$globvar['allowreg'] = true; // Duerfen user sich registrieren?
+$globvar['allowlogin'] = true; // Duerfen bereits registrierte Benutzer sich anmelden?
 
 // Includes
 include('inc/functions.inc.php');
@@ -33,7 +33,7 @@ if(isset($_GET['d'])) {
         if(empty($_GET['d']) || empty($_GET['c'])) {
             error('Nicht gen&uuml;gend Parameter angegeben.');
         } elseif(!file_exists('./i/' .$_GET['d']) && !is_valid_filename($_GET['d'], $globvar['validimages'])) {
-            error('Datei existiert nicht oder ist unzulässig.');
+            error('Datei existiert nicht oder ist unzul&auml;ssig.');
         } else {
             $imageName = sqlite_escape_string($_GET['d']);
             $deleteString = sqlite_escape_string($_GET['c']);
@@ -51,7 +51,7 @@ if(isset($_GET['d'])) {
 				else
 					$url = './';
 				
-                success('Bild erfolgreich gelöscht.', 1, $url);
+                success('Bild erfolgreich gel&ouml;scht.', 1, $url);
             } else {
                 error('Code und Bildname passen nicht zusammen.');
             }
@@ -72,10 +72,10 @@ if(isset($_GET['d'])) {
 			$error[] = 'Benutzername oder E-Mail bereits vorhanden.';		
 
 		if(empty($email) || empty($username) || empty($pass_enc) || empty($passrepeat_enc))
-			$error[] = 'Bitte alle Felder ausfüllen.';
+			$error[] = 'Bitte alle Felder ausf&uuml;llen.';
 			
 		if($pass_enc != $passrepeat_enc)
-			$error[] = 'Passwörter stimmen nicht überein.';
+			$error[] = 'Passw&ouml;rter stimmen nicht &uuml;berein.';
 			
 		if(!isset($error)) {
 			$db->query("INSERT INTO 'img_users' (userName, userMail, regDate, userPass) VALUES ('" .$username. "', '" .$email. "', '" .$regdate. "', '" .$pass_enc. "')");
@@ -107,7 +107,7 @@ if(isset($_GET['d'])) {
 			$error[] = 'Logindaten nicht korrekt.';		
 
 		if(empty($username) || empty($pass))
-			$error[] = 'Bitte alle Felder ausfüllen.';	
+			$error[] = 'Bitte alle Felder ausf&uuml;llen.';	
 			
 		if(!isset($error)) {
 			$db->fetch();
@@ -139,7 +139,7 @@ if(isset($_GET['d'])) {
 	$userID = (int) $_COOKIE['img_userid'];
 	$serverurl = getServer();
 	
-	$epp = 10; // Einträge pro Seite
+	$epp = 10; // Eintraege pro Seite
 	$p = !empty($_GET['p']) ? (int) $_GET['p'] : 1;
 	$gft = $p*$epp-$epp .','. $p * $epp;
 	
@@ -234,7 +234,7 @@ if(isset($_GET['d'])) {
         // Weitere pruefung, ob Bild auch wirklich ein Bild ist
         if(!in_array($endung, $globvar['validimages'])) {
             error('Invalides Bildformat.');
-        // Abfrage, ob Bild  die maximale größe ueberschritten hat
+        // Abfrage, ob Bild  die maximale groesse ueberschritten hat
         } else if($size > $globvar['maxsize']) {
             error('Das Bild ist gr&ouml;&szlig;er als ' .$globvar['maxsize']. ' kb');
         } else {    
@@ -324,7 +324,7 @@ if(isset($_GET['d'])) {
 			$serverurl = getServer();
             
 			
-            // is.gd Link für Twitter generieren, wenn Twitter aktiviert ist
+            // is.gd Link fuer Twitter generieren, wenn Twitter aktiviert ist
             if($globvar['twitter'] == true) {
                 $isgdlink = isgd('http://' .$serverurl. 'i/' .$name);
                 if($isgdlink != "error")
@@ -345,7 +345,7 @@ if(isset($_GET['d'])) {
             $fullausgabeclick = 'http://' .$serverurl. '?s=' .$name;
             $deletelink = 'http://' .$serverurl. '?d=' .$name. '&amp;c='.$deletestring;
             
-            // Eintrag in der Datenbank hinzufügen
+            // Eintrag in der Datenbank hinzufuegen
 			if(islogged())
 				$uploadedBy = (int) $_COOKIE['img_userid'];
 			else
