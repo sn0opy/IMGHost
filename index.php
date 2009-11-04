@@ -1,7 +1,5 @@
 <?php
 
-error_reporting(E_ALL);
-
 $globvar = array();
 $globvar['title'] = 'IMGhost'; 
 $globvar['2ndtitle'] = 'Host your images';
@@ -24,8 +22,8 @@ $globvar['allowreg'] = true; // Dürfen user sich registrieren?
 $globvar['allowlogin'] = true; // Dürfen bereits registrierte Benutzer sich anmelden?
 
 // Includes
-include('inc/checkdb.php');
 include('inc/functions.inc.php');
+include('inc/checkdb.php');
 
 ob_start();
 include('tpl/header.tpl.php');
