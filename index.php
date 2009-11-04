@@ -96,7 +96,7 @@ if(isset($_GET['d'])) {
 	} else {
 		include 'tpl/register.tpl.php';
 	}
-} elseif(isset($_GET['login']) && $globvar['allowlogin']) {
+} elseif(isset($_GET['login']) && $globvar['allowlogin'] == true) {
 	if(isset($_POST['login_submit'])) {
 		$username = sqlite_escape_string($_POST['username']);
 		$pass = encryptpass($_POST['password']);
@@ -128,14 +128,12 @@ if(isset($_GET['d'])) {
 	} else {
 		include 'tpl/login.tpl.php';
 	}
-} elseif(isset($_GET['logout'])) {
-	if(islogged()) {
-		setcookie("img_username", "", time()-1000);
-		setcookie("img_password", "", time()-1000);
-		setcookie("img_userid", "", time()-1000);
-		success('Erfolgreich ausgeloggt.', 1);
-	}
-} elseif(isset($_GET['profile'])) {
+} elseif(isset($_GET['logout'])) && islogged() {
+	setcookie("img_username", "", time()-1000);
+	setcookie("img_password", "", time()-1000);
+	setcookie("img_userid", "", time()-1000);
+	success('Erfolgreich ausgeloggt.', 1);
+} elseif(isset($_GET['profile']) && islogged()) {
 	$userID = (int) $_COOKIE['img_userid'];
 	$serverurl = getServer();
 	
