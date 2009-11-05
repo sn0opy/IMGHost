@@ -139,7 +139,7 @@ if(isset($_GET['d'])) {
 	
 	$epp = 10; // Eintraege pro Seite
 	$p = !empty($_GET['p']) ? (int) $_GET['p'] : 1;
-	$gft = $p*$epp-$epp .','. $p * $epp;
+	$gft = $p*$epp-$epp;
 	
 	$db->query("SELECT * FROM 'img_images' WHERE uploadedBy = " .$userID);
 	$picCount = $db->numRows();
@@ -154,7 +154,8 @@ if(isset($_GET['d'])) {
 	if($pageCount < $p) {
 		error('Seite existiert nicht.');
 	} else {	
-		$db->query("SELECT * FROM 'img_images' WHERE uploadedBy = " .$userID. " ORDER BY insertDate DESC LIMIT " .$gft);	
+		$db->query("SELECT * FROM 'img_images' WHERE uploadedBy = " .$userID. " ORDER BY insertDate DESC LIMIT " .$epp. " OFFSET " .$gft);
+
 		while($db->fetch()) {
 			$output[] = array($db->row('imageName'), $db->row('numClicks'), date("d.m.y H:i", $db->row('insertDate')), $db->row('deleteString'));
 		}
