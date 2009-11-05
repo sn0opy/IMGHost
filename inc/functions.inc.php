@@ -100,7 +100,7 @@ function islogged() {
 	
 		$username = sqlite_escape_string($_COOKIE['img_username']);
 		$pass = sqlite_escape_string($_COOKIE['img_password']);
-		$userID = (int) $_COOKIE['img_password'];
+		$userID = (int) $_COOKIE['img_userid'];
 
 		$db->query("SELECT * FROM 'img_users' WHERE userName = '" .$username. "' AND userPass = '" .$pass. "' AND userID = " .$userID);
 		
