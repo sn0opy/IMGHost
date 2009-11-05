@@ -15,7 +15,7 @@ if(!file_exists('inc/config.inc.php')) {
 		);
 
 		CREATE TABLE 'img_images' (
-		   imageID integert primary key,
+		   imageID integer primary key,
 		   imageName varchar(30) not null,
 		   numClicks integer(11) null,
 		   insertDate integer(11) not null,
