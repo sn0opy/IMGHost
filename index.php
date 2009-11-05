@@ -166,28 +166,26 @@ if(isset($_GET['d'])) {
 } elseif(isset($_GET['s'])) {
     // Fragt ab, ob ueberhaupt der Bildname mitgeliefert wurde
     if(empty($_GET['s'])) {
-        error('Kein Bild angegeben.');
-    // Prueft, ob das Bild existiert und ob der Bildname auch valide ist
-    } elseif(!file_exists('./i/' .$_GET['s']) && !is_valid_filename($_GET['s'], $globvar['validimages'])) {
-        error('Datei existiert nicht oder ist unzul&auml;ssig.');
+        error('Kein Bild angegeben.');		
     } else {
         $img = sqlite_escape_string($_GET['s']);
-        $imgausgabe = './i/' .$img;
-        
+        $imgausgabe = './i/' .$img; 
 		
         // Clickanzahl des Bildes laden
-        $db->query("SELECT rowid, imageName, numClicks FROM img_images WHERE imageName = '".$img."'");
+        $db->query("SELECT imageID, imageName, numClicks FROM img_images WHERE imageName = '".$img."'");
                 
         if($db->numRows()) {
             $db->fetch();
             $clicks = $db->row('numClicks'); // wird ausgegeben
-            $rowid = $db->row('rowid');
+            $imageID = $db->row('imageID');
             
             // Clickcounter um eins erhoehen
-            $db->query("UPDATE 'img_images' SET 'numClicks' = numClicks+1 WHERE rowid = " .$rowid);
+            $db->query("UPDATE 'img_images' SET 'numClicks' = numClicks+1 WHERE imageID = " .$imageID);
         
             include('tpl/einzel.tpl.php');        
-        }
+        } else {
+			error('Datei existiert nicht.');
+		}
     }        
 } else {
 	if(isset($_POST['nsubmit'])) { 

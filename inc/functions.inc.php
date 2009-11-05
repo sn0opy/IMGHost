@@ -1,11 +1,5 @@
 <?php
 
-// Funktion zum ueberpruefen, ob die Datei auch valide ist
-function is_valid_filename($filename, $extensions) {
-    $regex = '/^\w\.(' .implode('|', $extensions). ')$/';
-    return preg_match($regex, $filename);
-}
-
 // Error - Gibt formatierte Error-Message aus
 function error($msg) {
 	print '<div class="error">' .$msg. '</div>';
