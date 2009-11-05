@@ -94,7 +94,7 @@ Das Passwort wird logischerweise verschlüsselt in der Datenbank abgelegt.";
 }
 
 // Prueft ob benutzer bereits eingeloggt ist
-function isLogged() {
+function islogged() {
 	if(isset($_COOKIE['img_username']) && isset($_COOKIE['img_password']) && isset($_COOKIE['img_userid'])) {
 		$db = new db;		
 	
