@@ -128,7 +128,7 @@ if(isset($_GET['d'])) {
 	} else {
 		include 'tpl/login.tpl.php';
 	}
-} elseif(isset($_GET['logout'])) && islogged() {
+} elseif(isset($_GET['logout']) && islogged()) {
 	setcookie("img_username", "", time()-1000);
 	setcookie("img_password", "", time()-1000);
 	setcookie("img_userid", "", time()-1000);
