@@ -28,7 +28,7 @@ eingeschaltet, wo kann der User seine eigenen Bilder in seinem Profil begutachte
 	
 --- INSTALLATION
 Die Installation verl‰uft sehr einfach. Man muss bloﬂ alle Dateien und Ordner hochladen
-und die Rechte von den Ordnern i, t und clicks auf 777 setzen. 
+und die Rechte von den Ordnern i und t auf 777 setzen. 
 
 Beim ersten Aufruf des Scriptes, wird eine SQLite-Datenbank generiert. Diese besteht aus
 20 Zufallszeichen. Zus‰tzlich wird die Config erstellt.
