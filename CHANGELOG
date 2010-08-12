@@ -1,3 +1,6 @@
+12.08.2010 Sascha Ohms
+	* Einmalige ueberpruefung, ob Dateien bereits existieren eingebaut
+
 04.11.2009 Sascha Ohms
 	* Usersystem (Reg, Login, Logout, Profil)
 	* Bilder werden Usern (sofern eingeloggt) zugeordnet

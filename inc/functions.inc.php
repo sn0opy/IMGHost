@@ -103,4 +103,14 @@ function islogged() {
 	}
 }
 
+function genName($useRand, $endung, $thename) {
+    if($useRand == true)
+        return rand_str(12, 'abcdefghijklmnopqrstuvwxyz0123456789').$endung; 
+    else 
+        return $thename;
+		
+	
+}
+
 ?>
+

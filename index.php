@@ -217,11 +217,17 @@ if(isset($_GET['d'])) {
         
 		
         // Abfrage, ob Bildnamen nach dem Zufall gewaehlt werden sollen. Wenn nicht wird der eigentlich Bildname verwendet
-        if($globvar['use_randomname'] == true)
-            $name = rand_str(12, 'abcdefghijklmnopqrstuvwxyz0123456789').$endung; 
-        else 
-            $name = $thename;
+		$name = genName($globvar['use_randomname'], $endung, $thename);
         
+		// einmalige ueberpruefung, ob Datei bereits existiert
+		if(file_exists('i/' . $name)) {
+			if($globvar['use_randomname'] == true) {
+				$name = genName();
+			} else {
+				$filename = basename($thename, $endung);
+				$name = $filename.rand(1000, 9999).$endung;
+			}
+		}
 		
         // Bildgroesse in kb umrechnen
         $size = $_FILES['nfile']['size']; 
@@ -358,3 +364,4 @@ if(isset($_GET['d'])) {
 include('tpl/footer.tpl.php');
 
 ?>
+
