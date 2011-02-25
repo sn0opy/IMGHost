@@ -1,0 +1,172 @@
+* {
+	margin: 0px;
+	padding: 0px;
+}
+
+body {
+	font-size: 10pt;
+	font-family: 'Trebuchet MS', Arial, Helvetica, sans-serif;
+	color: #666;
+}
+
+#container {
+	width: 640px;
+	padding: 4px;
+	margin: auto;
+}
+
+#vorschau {
+	padding: 3px;
+	border: 1px solid black;
+}
+
+.error {
+	border: 1px solid #F00;
+	background: #FFBDBD url(img/error.png) no-repeat;
+	background-position: 5px center;
+	padding-left: 25px;
+	color: #F00;
+	margin-bottom: 3px;
+}
+
+.success {
+	border: 1px solid #3A6E31;
+	background: #BFDFB9 url(img/success.png) no-repeat;
+	background-position: 5px center;
+	padding-left: 25px;
+	color: #3A6E31;
+	margin-bottom: 3px;
+}
+
+a, a:visited, a img {
+	border: 0px;
+	text-decoration: none;
+	color: #666;
+}
+
+a:hover {
+	text-decoration: underline;
+}
+
+strong {
+	color: #8ABD80;	
+}
+
+small {
+	color: gray;
+	font-size: 8pt;
+}
+
+h1 {
+	border-bottom: 1px solid lightgray;
+}
+
+h1 a:link, h1 a:visited {
+	color: #8ABD80;
+	letter-spacing: -1px;
+	text-decoration: none;
+}
+
+h3 {
+	border-bottom: 1px solid lightgray;
+}
+
+ul {
+	list-style-image: url(img/arrow.jpg);
+}
+
+input {
+	padding: 2px;
+	border: 1px solid #999;
+	background: #EEE;
+}
+
+#navi {
+	margin-bottom: 40px;
+}
+
+#navi ul {
+	list-style-type: none;
+}
+
+#navi ul li {
+	float: left;
+}
+
+#navi ul li span {
+	margin-right: 10px;
+}
+
+#navi a, #navi a:visited {
+	color: #AAA;
+	font-size: 10pt;
+}
+
+.formRow {
+	float: left;
+	clear: both;
+	margin-bottom: 5px;
+}
+
+.formLabel {
+	float: left;
+	width: 170px;
+}
+
+.formValue {
+	float: left;
+}
+
+.clearfix {	
+	clear: both;
+}
+
+.outRow {
+	float: left;
+	width: 100%;
+	margin-bottom: 10px;
+	clear: both;
+	border-bottom: 1px solid #CCC;
+}
+
+.outRow:hover {
+	background: #DDD;
+}
+
+.pageRow {
+	height: 20px;
+	padding: 2px;
+	background: #EEE;
+	border-bottom: 1px solid #CCC;
+	margin-bottom: 10px;
+}
+
+.pageRowB {	
+	height: 20px;
+	padding: 2px;
+	background: #EEE;
+	border-top: 1px solid #CCC;
+	margin-bottom: 10px;
+}
+
+.floatleft {
+	float: left;
+}
+
+.outPicture {
+	float: left;
+	margin-right: 20px;
+}
+
+.outLinks {
+	float: left;
+}
+
+.outLinks input {
+	width: 250px;
+	margin-bottom: 2px;
+}
+
+.outLinks .formRow {
+	margin-bottom: 2px;
+}
